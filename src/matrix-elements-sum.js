@@ -26,6 +26,7 @@ function getMatrixElementsSum(matrix) {
          }
        else if (matrix[matrix.length-2] === 0) {
            matrix = matrix.slice(0, matrix.length-2)
+           
          }
          
         sum += matrix[i]    
@@ -33,10 +34,12 @@ function getMatrixElementsSum(matrix) {
   console.log(matrix) 
    return sum;
   }
-
-console.log(getMatrixElementsSum([[0, 1, 1, 2],
-[0, 5, 0, 0],
-[2, 0, 3, 3]]))
+  
+  console.log(getMatrixElementsSum([  [1],
+        [5],
+        [0],
+        [2] ]))
+  
 
 module.exports = {
   getMatrixElementsSum
