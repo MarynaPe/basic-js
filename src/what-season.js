@@ -11,37 +11,29 @@ const { NotImplementedError } = require('../extensions/index.js');
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  * 
  */
-function getSeason() {
+function getSeason(date) {
   if (!date) return 'Unable to determine the time of year!';
   if (Object.getOwnPropertyNames(date).length > 0 || !date.getTime) throw new Error('Invalid date!');
-   
-    month = document.forms.date.month.value;
-    season = '';
   
-    switch(month) {
-        case '12':
-        case '1':
-        case '2':
-            season = 'winter';
-        break;
-        case '3':
-        case '4':
-        case '5':
-            season = 'spring';
-        break;
-        case '6':
-        case '7':
-        case '8':
-            season = 'summer';
-        break;
-        case '9':
-        case '10':
-        case '11':
-            season = 'fall';
-        break;
-    }
+  switch (date.getMonth()) {
+    case 2:
+    case 3:
+    case 4:
+      return 'spring';
+    case 5:
+    case 6:
+    case 7:
+      return 'summer';
+    case 8:
+    case 9:
+    case 10:
+      return 'autumn';
+    case 11:
+    case 0:
+    case 1:
+      return 'winter';
+  }
 }
-    console.log(getSeason(new Date(2020, 02, 31)));
 
 module.exports = {
   getSeason
